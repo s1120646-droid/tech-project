@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人首頁 - 舞者</title>
+    <!-- 使用 Tailwind CSS 載入 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            animation: background-animate 20s infinite ease-in-out;
+            background: linear-gradient(-45deg, #FFC0CB, #ADD8E6, #90EE90, #FFD700);
+            background-size: 400% 400%;
+        }
+
+        @keyframes background-animate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .icon-bounce {
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* 自定義 Linktree 風格按鈕 */
+        .linktree-btn {
+            @apply flex items-center justify-center w-full max-w-sm mx-auto my-3 py-4 px-6 bg-white bg-opacity-80 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-opacity-100 backdrop-blur-sm;
+        }
+
+        .linktree-btn span {
+            @apply ml-2;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 text-gray-800">
+    <main class="w-full max-w-xl mx-auto backdrop-blur-lg bg-white bg-opacity-60 p-8 md:p-12 rounded-3xl shadow-2xl text-center">
+        
+        <!-- 個人頭像與標題區 -->
+        <div class="mb-8">
+            <img class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-lg" src="https://placehold.co/128x128/90EE90/ffffff?text=Dance" alt="個人頭像">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">嗨，我是 [你的名字]</h1>
+            <p class="text-lg md:text-xl font-medium text-gray-700">一位熱愛跳舞的舞者</p>
+        </div>
+
+        <!-- 社交連結區塊 (GitHub, Email, LinkedIn) -->
+        <div class="flex justify-center space-x-6 mb-10">
+            <!-- GitHub 連結 -->
+            <a href="https://github.com/[你的GitHub帳號]" target="_blank" rel="noopener noreferrer" class="transition-transform transform hover:scale-110 icon-bounce text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.82-.261.82-.577 0-.285-.011-1.042-.016-2.043-3.33.725-4.034-1.611-4.034-1.611-.544-1.381-1.325-1.748-1.325-1.748-1.089-.745.083-.731.083-.731 1.205.084 1.838 1.237 1.838 1.237 1.07 1.835 2.809 1.305 3.492.998.108-.778.419-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.312.469-2.387 1.238-3.226-.135-.303-.541-1.524.116-3.176 0 0 1.008-.323 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.656 1.652.25 2.873.116 3.176.77.84 1.237 1.914 1.237 3.226 0 4.609-2.807 5.626-5.476 5.922.43.37.811 1.029.811 2.073 0 1.603-.015 2.894-.015 3.288 0 .318.216.694.825.576 4.766-1.587 8.202-6.086 8.202-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <!-- Email 連結 -->
+            <a href="mailto:your-email@example.com" class="transition-transform transform hover:scale-110 icon-bounce text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12.713l-10.027-7.243c-.276-.201-.58-.337-.899-.408-.088-.02-.178-.035-.268-.044-.24-.022-.486-.022-.729-.001-.186.015-.371.042-.55.078l.492.355c.343.248.665.519.98.797l10.027 7.244 10.028-7.243c.315-.279.637-.549.98-.797l.492-.355c-.179-.036-.364-.063-.55-.078-.243-.021-.489-.021-.729.001-.09.009-.18.024-.268.044-.319.071-.623.207-.899.408l-10.027 7.243zm-10.158-6.176c-.023.005-.045.011-.067.018l.218.158c.277.201.554.402.83.603l10.027 7.243 10.027-7.243c.276-.201.553-.402.83-.603l.218-.158c-.022-.007-.044-.013-.067-.018l-.053-.012c-.222-.047-.446-.071-.671-.073l-.004-.001c-.139-.002-.278-.002-.417-.001-.482.001-.963.024-1.442.068-.21.019-.419.043-.627.071l-8.543 6.172-8.543-6.172c-.208-.028-.417-.052-.627-.071-.479-.044-.96-.067-1.442-.068l-.004-.001c-.225.002-.449.026-.671.073l-.053.012z"/></svg>
+            </a>
+            <!-- LinkedIn 連結 -->
+            <a href="https://linkedin.com/in/[你的LinkedIn帳號]" target="_blank" rel="noopener noreferrer" class="transition-transform transform hover:scale-110 icon-bounce text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.611 0-1.109-.496-1.109-1.107 0-.612.498-1.109 1.109-1.109s1.109.497 1.109 1.109c0 .611-.498 1.107-1.109 1.107zm13 6.891h-2v-3.666c0-.804-.017-1.838-1.115-1.838-1.117 0-1.287.876-1.287 1.789v3.715h-2v-6h1.998v.858h.028c.277-.525.962-.858 1.97-.858 2.112 0 2.5 1.396 2.5 3.218v3.782z"/></svg>
+            </a>
+        </div>
+
+        <hr class="border-t border-gray-300 w-1/2 mx-auto mb-8">
+
+        <!-- IG Linktree 連結區塊 -->
+        <div class="space-y-4">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">我的 Instagram 連結</h2>
+            <!-- 舞蹈影片連結 -->
+            <a href="https://instagram.com/[你的舞蹈IG帳號]" target="_blank" rel="noopener noreferrer" class="linktree-btn card-hover">
+                <span role="img" aria-label="舞蹈">💃</span>
+                <span class="font-semibold text-lg">觀看我的舞蹈影片</span>
+            </a>
+            <!-- 個人作品集連結 -->
+            <a href="https://instagram.com/[你的個人作品集]" target="_blank" rel="noopener noreferrer" class="linktree-btn card-hover">
+                <span role="img" aria-label="作品集">🎨</span>
+                <span class="font-semibold text-lg">我的作品集</span>
+            </a>
+            <!-- 合作邀約連結 -->
+            <a href="https://instagram.com/[你的合作頁面]" target="_blank" rel="noopener noreferrer" class="linktree-btn card-hover">
+                <span role="img" aria-label="合作">🤝</span>
+                <span class="font-semibold text-lg">合作與洽詢</span>
+            </a>
+        </div>
+        
+    </main>
+
+    <script>
+        // 增加點擊效果的JavaScript
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                link.classList.add('animate-ping');
+                setTimeout(() => {
+                    link.classList.remove('animate-ping');
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
